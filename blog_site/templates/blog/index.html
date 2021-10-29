@@ -1,49 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Index Page</title>
-    <style>
-* {
-  margin:0px;
-  padding:0px;
-  box-sizing:border-box;
-  font-family:sans-serif;
-}
-
-      #sidebar {
-        position:absolute;
-        top:0px;
-        left:-200px;
-        width:200px;
-        height:100%;
-        background:#151719;
-        transition:all 300ms linear;
-      }
-      #sidebar.active {
-        left:0px;
-      }
-      #sidebar .toggle-btn {
-        position:absolute;
-        left:220px;
-        top:10px;
-      }
-      #sidebar .toggle-btn span {
-        display:block;
-        width:30px;
-        height:5px;
-        background:#151719;
-        margin:5px 0px;
-        cursor:pointer;
-      }
-      #sidebar div.list div.item {
-        padding:15px 10px;
-        border-bottom:1px solid #444;
-        color:#fcfcfc;
-        text-transform:uppercase;
-        font-size:15px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
   </head>
   <body>
     <div id="main">
@@ -54,10 +15,18 @@
           <span></span>
           <span></span>
         </div>  
-        <div class="list">
-          <div class="item">Home</div>
-          <div class="item">Posts</div>
-          <div class="item">Projects</div>
+        <div class="content">
+          <div id="profile">
+            <img src="{% static 'blog/img/avatar.jpeg' %}" alt="avatar">
+          </div>
+          <div id="searchbar">
+            <span>Searchbar</span>
+          </div>
+          <div class="list">
+            <div class="item">Home</div>
+            <div class="item">Posts</div>
+            <div class="item">Projects</div>
+          </div>
         </div>
       </div>
 
@@ -68,7 +37,7 @@
   </body>
   <script>
     function toggleSidebar(ref){
-          document.getElementById("sidebar").classList.toggle('active');
-        }
+      document.getElementById("sidebar").classList.toggle('active');
+    }
   </script>
 </html>

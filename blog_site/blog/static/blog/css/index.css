@@ -6,22 +6,25 @@
 }
 
 #profile {
-  width:80px;
-  height:80px;
-  color:white;
+  margin-top: 50px;
+  height:280px;
+  width:100%;
+  text-align:center;
 }
 
 #profile img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: auto;
   border-radius:50%;
+  margin: 10px auto 20px;
+  display: block;
 }
 
 #sidebar {
   position:absolute;
   top:0px;
-  left:-300px;
-  width:300px;
+  left:-340px;
+  width:340px;
   height:100%;
   background:#151719;
   transition:all 300ms linear;
@@ -31,7 +34,7 @@
 }
 #sidebar .toggle-btn {
   position:absolute;
-  left:320px;
+  left:360px;
   top:10px;
 }
 #sidebar .toggle-btn span {
