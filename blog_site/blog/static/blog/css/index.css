@@ -36,14 +36,16 @@
   height: 70%;
   border: 3px solid #151719;
   border-right:none;
-  padding:5px;
-  border-radius: 5px 0 0 5px;
+  padding:10px;
+  border-radius: 10px 0 0 10px;
   outline: none;
-  color: #9DBFAF;
+  color: #E8DFD0;
+  background:#333333;
+  font-size: 16px;
 }
 
 .searchTerm:focus{
-  color:#00B4CC;
+  color:#E8DFD0;
 }
 
 .searchButton {
@@ -51,10 +53,10 @@
   height: 70%;
   border:3px solid #151719;
   border-left: none;
-  background:#fff;
+  background:#333333;
   text-align:center;
-  color: #fff;
-  border-radius:0 5px 5px 0;
+  color: #333333;
+  border-radius:0 10px 10px 0;
   cursor: pointer;
   font-size:20px;
   padding:5px;
@@ -63,6 +65,10 @@
 .searchButton img {
   width: 100%;
   height: auto;
+}
+
+.searchButton:hover {
+  background: #3969EF;
 }
 
 #sidebar {
