@@ -90,10 +90,31 @@
   margin:5px 0px;
   cursor:pointer;
 }
-#sidebar div.list div.item {
+#sidebar div.menu div.item {
   padding:15px 10px;
   border-bottom:1px solid #444;
   color:#fcfcfc;
   text-transform:uppercase;
   font-size:15px;
+}
+
+.social-links {
+  position:absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.social-links div.icons {
+  width:100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  align-content: center;
+}
+
+.social-links div div {
+  width: 40px;
+  height: auto;
 }

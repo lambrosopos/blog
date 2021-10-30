@@ -25,10 +25,17 @@
               <img src="{% static 'blog/img/icons/search-icon.png' %}"></i>
             </button>
           </div>
-          <div class="list">
+          <div class="menu">
             <div class="item">Home</div>
             <div class="item">Posts</div>
             <div class="item">Projects</div>
+          </div>
+          <div class="social-links">
+            <div class="icons">
+              <div> <img src="{% static 'blog/img/icons/linkedin.png' %}"> </div>
+              <div> <img src="{% static 'blog/img/icons/github.png' %}"> </div>
+              <div> <img src="{% static 'blog/img/icons/gmail.png' %}"> </div>
+            </div>
           </div>
         </div>
       </div>
@@ -40,7 +47,7 @@
   </body>
   <script>
     function toggleSidebar(ref){
-      document.getElementById("sidebar").classList.toggle('active');
-    }
+          document.getElementById("sidebar").classList.toggle('active');
+        }
   </script>
 </html>
