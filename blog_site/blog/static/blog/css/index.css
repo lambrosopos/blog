@@ -50,12 +50,14 @@
   width:10%;
   height: 70%;
   border:3px solid #151719;
+  border-left: none;
   background:#fff;
   text-align:center;
   color: #fff;
   border-radius:0 5px 5px 0;
   cursor: pointer;
   font-size:20px;
+  padding:5px;
 }
 
 .searchButton img {
