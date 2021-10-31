@@ -1,14 +1,12 @@
 div.top-banner {
+  position:relative;
   width: 100%;
-  height: 15%;
-  background: #151719;
   padding: 30px;
 }
 
 div.post-metadata {
+  position:relative;
   width: 100%;
-  height: 15%;
-  background: blue;
   padding: 20px 30px;
 }
 
@@ -16,9 +14,9 @@ div.post-metadata .post-tags {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  align-content: flex-start;
   flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-end;
 }
 
 div.post-metadata .post-tags div {
@@ -27,14 +25,17 @@ div.post-metadata .post-tags div {
 }
 
 div.bottom-content {
-  padding:30px;
+  position:relative;
+  padding: 10px;
   width: 100%;
-  height: 70%;
-  background: red;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-div.post-content {
+div.postlist-wrap {
   width: 100%;
-  height: 100%;
+  height: 45%;
   background: grey;
 }
