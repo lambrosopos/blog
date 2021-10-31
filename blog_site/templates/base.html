@@ -26,9 +26,15 @@
             </button>
           </div>
           <div class="menu">
-            <div class="item">Home</div>
-            <div class="item">Posts</div>
-            <div class="item">Projects</div>
+            <div class="item">
+              <a class="menu-links" href="{% url 'index' %}">Home</a>
+            </div>
+            <div class="item">
+              <a class="menu-links" href="{% url 'post_index' %}">Posts</a>
+            </div>
+            <div class="item">
+              <a class="menu-links">Projects</a>
+            </div>
           </div>
           <div class="social-links">
             <div class="icons">
