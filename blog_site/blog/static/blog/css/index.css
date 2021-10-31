@@ -136,3 +136,16 @@
   width: 40px;
   height: auto;
 }
+
+#main-content {
+  position:absolute;
+  transition:all 300ms linear;
+  left: 60px;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#main-content.active {
+  left: 400px;
+}

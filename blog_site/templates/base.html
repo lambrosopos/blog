@@ -15,7 +15,7 @@
           <span></span>
           <span></span>
         </div>  
-        <div class="content">
+        <div class="sidebar-content">
           <div id="profile">
             <img src="{% static 'blog/img/avatar.jpeg' %}" alt="avatar">
           </div>
@@ -47,7 +47,7 @@
       </div>
 
       <!-- Content -->
-      <div id="content">
+      <div id="main-content" class="active">
         {% block content %}
         {% endblock %}
       </div>
@@ -56,6 +56,7 @@
   <script>
     function toggleSidebar(ref){
           document.getElementById("sidebar").classList.toggle('active');
+          document.getElementById("main-content").classList.toggle('active');
         }
   </script>
 </html>
