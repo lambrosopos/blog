@@ -5,19 +5,22 @@
     <meta charset="utf-8">
     <title>Index Page</title>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
+    {% block header %}
+    {% endblock %}
   </head>
   <body>
-    <div id="main">
-      <!-- Sidebar -->
-      <div id="sidebar" class="active">
-        <div class="toggle-btn" onclick="toggleSidebar(this)">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>  
-        <div class="sidebar-content">
+    <section id="container">
+      <div class="content-wrap">
+
+        <!-- Sidebar -->
+        <div id="sidebar">
           <div id="profile">
             <img src="{% static 'blog/img/avatar.jpeg' %}" alt="avatar">
+          </div>
+          <div id="title">
+            <span>Calvin's</span>
+            <span>Thought</span>
+            <span>Bubble</span>
           </div>
           <div id="searchbar">
             <input type="text" class="searchTerm" placeholder="Search">
@@ -25,7 +28,7 @@
               <img src="{% static 'blog/img/icons/search-icon.png' %}"></i>
             </button>
           </div>
-          <div class="menu">
+          <div id="menu">
             <div class="item">
               <a class="menu-links" href="{% url 'index' %}">Home</a>
             </div>
@@ -38,26 +41,16 @@
           </div>
           <div class="social-links">
             <div class="icons">
-              <div> <img src="{% static 'blog/img/icons/linkedin.png' %}"> </div>
-              <div> <img src="{% static 'blog/img/icons/github.png' %}"> </div>
-              <div> <img src="{% static 'blog/img/icons/gmail.png' %}"> </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Content -->
-      <div id="main-content" class="active">
-        {% block content %}
-        {% endblock %}
+        <!-- Content -->
+        <div id="content">
+          {% block content %}
+          {% endblock %}
+        </div>
       </div>
-    </div>
   </body>
-  <script>
-    function toggleSidebar(ref){
-          document.getElementById("sidebar").classList.toggle('active');
-          document.getElementById("main-content").classList.toggle('active');
-        }
-  </script>
 </html>
 

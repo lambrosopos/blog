@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/post_index.css' %}">
+{% endblock %}
 
 {% block content %}
-<div>
-  <div class="top-banner">
-  </div>
-  <div class="bottom-content">
-    <div class="post-content">
-      <div class="post-selector">
-      </div>
-      <div class="posts-list">
-      </div>
-      <div class="post-paginator">
-      </div>
+<div class="top-banner">
+</div>
+<div class="bottom-content">
+  <div class="post-content">
+    <div class="post-selector">
     </div>
-    <div class="post-metadata">
-      <div class="post-categories">
-      </div>
-      <div class="post-tags">
-      </div>
+    <div class="posts-list">
+    </div>
+    <div class="post-paginator">
+    </div>
+  </div>
+  <div class="post-metadata">
+    <div class="post-categories">
+    </div>
+    <div class="post-tags">
     </div>
   </div>
 </div>
