@@ -31,8 +31,19 @@ div.bottom-content {
 }
 
 div.bottom-content div.post-filter {
+  padding: 10px;
   text-align:right;
-  padding:10px;
   width: 100%;
 }
 
+div.post-list {
+  padding: 10px;
+  width: 100%;
+}
+
+div.post-item {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+}
