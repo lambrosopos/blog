@@ -12,39 +12,47 @@
   <p>Welcome to posts index page!</p>
   <p>Posts are organized by popularity and time. Use the post tags to view related posts.</p>
 </div>
-<div class="post-metadata">
-  <div class="post-tags">
-    <h3>Tags:</h3>
-    <div>tag1,</div>
-    <div>tag2,</div>
-    <div>tag3,</div>
-    <div>tag4,</div>
-    <div>tag5,</div>
-    <div>tag6,</div>
-    <div>tag7,</div>
-    <div>tag8,</div>
-    <div>tag6,</div>
-    <div>tag7,</div>
-    <div>tag8,</div>
-    <div>tag6,</div>
-    <div>tag7,</div>
-    <div>tag8,</div>
-    <div>tag6,</div>
-    <div>tag7,</div>
-    <div>tag8,</div>
-    <div>very long tag,</div>
-    <div>all</div>
-  </div>
-</div>
 <div class="bottom-content">
-  <div class="postlist-wrap">
-    <div class="post-filter">
-      
-    </div>
-    <hr>
-    <div class="posts">
+  <div class="post-filter">
+    <span>Sort by: </span>
+    <select>
+      <option value="recent">Recent</option>
+      <option value="views">Views</option>
+    </select>
+    <span>Order by: </span>
+    <select>
+      <option value="desc">Descending</option>
+      <option value="asc">Ascending</option>
+    </select>
+  </div>
+  <hr>
+  <div class="post-metadata">
+    <div class="post-tags">
+      <p>Tags:</p>
+      <div>tag1,</div>
+      <div>tag2,</div>
+      <div>tag3,</div>
+      <div>tag4,</div>
+      <div>tag5,</div>
+      <div>tag6,</div>
+      <div>tag7,</div>
+      <div>tag8,</div>
+      <div>tag6,</div>
+      <div>tag7,</div>
+      <div>tag8,</div>
+      <div>tag6,</div>
+      <div>tag7,</div>
+      <div>tag8,</div>
+      <div>tag6,</div>
+      <div>tag7,</div>
+      <div>tag8,</div>
+      <div>very long tag,</div>
+      <div>all</div>
     </div>
   </div>
-</div>
+  <div class="posts">
+    <div class="post-item">
+    </div>
+  </div>
 </div>
 {% endblock %}
