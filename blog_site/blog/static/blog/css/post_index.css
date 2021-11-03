@@ -4,13 +4,13 @@ div.top-banner {
   padding: 30px;
 }
 
-div.post-metadata {
+div.post-tags-wrap {
   position:relative;
   width: 100%;
   padding: 10px;
 }
 
-div.post-metadata .post-tags {
+div.post-tags-wrap .post-tags {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -19,7 +19,7 @@ div.post-metadata .post-tags {
   align-content: flex-end;
 }
 
-div.post-metadata .post-tags div {
+div.post-tags-wrap .post-tags div {
   margin: 5px;
   padding: 2px;
 }
@@ -46,4 +46,12 @@ div.post-item {
   flex: 1 1 auto;
   justify-content: space-between;
   align-items: center;
+}
+
+div.post-item div.post-subtitle {
+  padding: 5px 0;
+}
+
+div.post-item div.post-metadata {
+  padding: 10px 0;
 }
