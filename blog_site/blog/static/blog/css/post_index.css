@@ -8,6 +8,7 @@ div.post-tags-wrap {
   position:relative;
   width: 100%;
   padding: 10px;
+  padding-bottom: 30px;
 }
 
 div.post-tags-wrap .post-tags {
