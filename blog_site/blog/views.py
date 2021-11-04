@@ -7,3 +7,6 @@ def index(request):
 
 def post_index(request):
     return render(request, 'blog/post/post_index.html')
+
+def post_view(request, post_id):
+    return render(request, 'blog/post/post_view.html')
