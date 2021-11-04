@@ -53,9 +53,11 @@
   <div class="post-list">
     <div class="post-item">
       <div>
-        <h2>Example Post title</h2>
+        <h2>
+          <a href="{% url 'post_view' post_id=1 %}">Example Post title</a>
+        </h2>
         <div class="post-subtitle">
-          <a>
+          <a href="{% url 'post_view' post_id=1 %}">
             <h5>Example Subtitle</h5>
           </a>
         </div>
@@ -63,7 +65,7 @@
           <span>July 21, 2021</span><span>tag</span>
         </div>
       </div>
-      <a>
+      <a href="{% url 'post_view' post_id=1 %}">
         <img alt="post img">
       </a>
     </div>
