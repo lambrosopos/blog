@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/post_view.css' %}">
+{% endblock %}
+
+{% block content %}
 <div>
   <div class="post-header">
     <div class="post-title">
@@ -8,9 +13,9 @@
       <div class="post-subtitle">
         Example Subtitle
       </div>
-    </div>
-    <div class="post-info">
-      <span>July 21, 2021</span><span>tag</span>
+      <div class="post-info">
+        <span>July 21, 2021</span><span>tag</span>
+      </div>
     </div>
     <div class="post-body-wrap">
       <div class="post-body">
@@ -21,3 +26,4 @@
     </div>
   </div>
 </div>
+{% endblock %}
