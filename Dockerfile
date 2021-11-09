@@ -1,7 +1,14 @@
 FROM python:3.8
-WORKDIR /blog_app
-COPY requirements.txt requirements.txt
-RUN python -m pip install -r requirements.txt
-COPY ./blog_site .
+LABEL maintainer="lambrosopos@gmail.com"
+
+ENV APP_DIR /blog_app
+WORKDIR $APP_DIR
 EXPOSE 8000
-CMD ["python", "manage.py", "runserver"]
+
+COPY ./requirements.txt requirements.txt
+RUN python -m pip install -r requirements.txt
+
+COPY ./gunicorn_start /bin/gunicorn_start
+RUN chmod u+x /bin/gunicorn_start
+
+COPY ./blog_site .

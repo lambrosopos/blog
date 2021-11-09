@@ -1,37 +1,35 @@
 version: "3.3"
 
-secrets:
-  postgres_user:
-    external: true
-  postgres_password:
-    external: true
-  postgres_db:
-    external: true
-
 services:
   postgres:
     image: postgres:13
-    secrets:
-      - postgres_user
-      - postgres_password
-      - postgres_db
     environment:
-      POSTGRES_USER: postgres_user
-      POSTGRES_PASSWORD: postgres_password
-      POSTGRES_DB: postgres_db
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "blog_db"
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - "postgres-db-volume:/var/lib/postgresql/data"
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", postgres_user]
+      test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 5s
       retries: 5
     restart: always
 
   blog_app:
     build: .
+    command: >
+      sh -c "sleep 10 &&
+             python manage.py migrate &&
+             gunicorn blog_site.wsgi:application --bind 0.0.0.0:8000"
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - "blog-storage:/blog_app"
 
 volumes:
   postgres-db-volume:
+    external: false
+  blog-storage:
     external: false
