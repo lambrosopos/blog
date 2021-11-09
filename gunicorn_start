@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Name of the application
+NAME="blog_app"
+
+# Django project directory
+DJANGODIR=/home/qetroux/coding/blog/blog_site
+
+# we will communicte using this unix socket
+SOCKFILE=$DJANGODIR/run/gunicorn.sock
+
+# User and Group settings
+USER=qetroux
+GROUP=docker
+
+# Number of Gunicorn worker processes
+NUM_WORKERS=3
+
+# which settings file should Django use
+DJANGO_SETTINGS_MODULE=blog_app.settings
+
+# WSGI module name
+DJANGO_WSGI_MODULE=blog_app.wsgi
+echo "Starting $NAME as `whoami`"
+
+# Activate the virtual environment
+cd $DJANGODIR
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+
+# Create the run directory if it doesn't exist
+RUNDIR=$(dirname $SOCKFILE)
+test -d $RUNDIR || mkdir -p $RUNDIR
+
+# Start your Django Unicorn
+# Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
+gunicorn ${DJANGO_WSGI_MODULE}:application \
+--name $NAME \
+--workers $NUM_WORKERS \
+--bind=unix:$SOCKFILE \
+--log-level=debug \
+--log-file=-
