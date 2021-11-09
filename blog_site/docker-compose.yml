@@ -26,3 +26,12 @@ services:
       interval: 5s
       retries: 5
     restart: always
+
+  blog_app:
+    build: .
+    ports:
+      - "5000:5000"
+
+volumes:
+  postgres-db-volume:
+    external: false
