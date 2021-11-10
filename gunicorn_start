@@ -11,7 +11,7 @@ SOCKFILE=$DJANGODIR/run/gunicorn.sock
 
 # User and Group settings
 USER=qetroux
-GROUP=docker
+GROUP=qetroux
 
 # Number of Gunicorn worker processes
 NUM_WORKERS=3
@@ -37,7 +37,7 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 gunicorn ${DJANGO_WSGI_MODULE}:application \
 --name $NAME \
 --workers $NUM_WORKERS \
---user=qetroux --group=sudo \
+--user=$USER --group=$GROUP \
 --bind=unix:$SOCKFILE \
 --log-level=debug \
 --log-file=-
