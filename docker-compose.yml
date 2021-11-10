@@ -19,8 +19,9 @@ services:
     build: .
     command: >
       sh -c "sleep 10 &&
+             python manage.py makemigrations &&
              python manage.py migrate &&
-             gunicorn blog_site.wsgi:application --bind 0.0.0.0:8000"
+             python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     depends_on:
