@@ -17,10 +17,10 @@ GROUP=docker
 NUM_WORKERS=3
 
 # which settings file should Django use
-DJANGO_SETTINGS_MODULE=blog_app.settings
+DJANGO_SETTINGS_MODULE=blog_site.settings
 
 # WSGI module name
-DJANGO_WSGI_MODULE=blog_app.wsgi
+DJANGO_WSGI_MODULE=blog_site.wsgi
 echo "Starting $NAME as `whoami`"
 
 # Activate the virtual environment
@@ -37,6 +37,7 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 gunicorn ${DJANGO_WSGI_MODULE}:application \
 --name $NAME \
 --workers $NUM_WORKERS \
+--user=qetroux --group=sudo \
 --bind=unix:$SOCKFILE \
 --log-level=debug \
 --log-file=-
