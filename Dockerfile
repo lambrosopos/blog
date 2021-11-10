@@ -8,7 +8,7 @@ EXPOSE 8000
 COPY ./requirements.txt requirements.txt
 RUN python -m pip install -r requirements.txt
 
-COPY ./gunicorn_start /bin/gunicorn_start
-RUN chmod u+x /bin/gunicorn_start
+COPY ./gunicorn_start ./gunicorn_start
+RUN chmod u+x ./gunicorn_start
 
 COPY ./blog_site .
