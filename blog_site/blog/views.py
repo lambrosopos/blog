@@ -10,3 +10,6 @@ def post_index(request):
 
 def post_view(request, post_id):
     return render(request, 'blog/post/post_view.html')
+
+def post_edit(request, post_id):
+    return render(request, 'blog/post/post_edit.html')
