@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 django = "*"
 python-dotenv = "*"
-psycopg2 = "*"
 gunicorn = "*"
 markdown = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
