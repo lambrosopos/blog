@@ -27,10 +27,8 @@ services:
     depends_on:
       - postgres
     volumes:
-      - "blog-storage:/blog_app"
+      - "./blog_site:/blog_app"
 
 volumes:
   postgres-db-volume:
-    external: false
-  blog-storage:
     external: false
