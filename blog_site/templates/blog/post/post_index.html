@@ -31,36 +31,20 @@
   <div class="post-tags-wrap">
     <div class="post-tags">
       <p>Tags:</p>
-      <div>tag1,</div>
-      <div>tag2,</div>
-      <div>tag3,</div>
-      <div>tag4,</div>
-      <div>tag5,</div>
-      <div>tag6,</div>
-      <div>tag7,</div>
-      <div>tag8,</div>
-      <div>tag6,</div>
-      <div>tag7,</div>
-      <div>tag8,</div>
-      <div>tag6,</div>
-      <div>tag7,</div>
-      <div>tag8,</div>
-      <div>tag6,</div>
-      <div>tag7,</div>
-      <div>tag8,</div>
-      <div>very long tag,</div>
-      <div>all</div>
+      {% for tag in tag_list %}
+      <div>{{ tag.name }}</div>
+      {% endfor %}
     </div>
   </div>
   <div class="post-list">
-    {% for post in object_list %}
+    {% for post in post_list %}
     <div class="post-item">
       <div>
         <h2>
-          <a href="{% url 'post_view' post_id=1 %}">{{ post.title }}</a>
+          <a href="{% url 'post_view' pk=post.id %}">{{ post.title }}</a>
         </h2>
         <div class="post-subtitle">
-          <a href="{% url 'post_view' post_id=1 %}">
+          <a href="{% url 'post_view' pk=post.id %}">
             <h5>{{ post.subtitle }}</h5>
           </a>
         </div>
@@ -68,7 +52,7 @@
           <span>July 21, 2021</span><span>tag</span>
         </div>
       </div>
-      <a href="{% url 'post_view' post_id=1 %}">
+      <a href="{% url 'post_view' pk=post.id %}">
         <img alt="post img">
       </a>
     </div>
