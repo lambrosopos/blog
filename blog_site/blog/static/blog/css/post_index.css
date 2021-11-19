@@ -94,6 +94,7 @@ div.post-item {
 }
 
 div.post-item div.post-subtitle {
+  margin-top: 5px;
   padding: 5px 0;
 }
 
