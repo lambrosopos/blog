@@ -1,3 +1,13 @@
+a {
+  color: rgba(41, 41, 41, 1);
+  font-style: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fbc40d;
+}
+
 div.top-banner {
   position:relative;
   width: 100%;
