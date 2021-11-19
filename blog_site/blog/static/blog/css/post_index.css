@@ -54,8 +54,18 @@ div.post-tags-wrap .post-tags {
 }
 
 div.post-tags-wrap .post-tags div {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: rgba(41, 41, 41, 1);
+  color: #fff;
+  border-radius: 10px;
   margin: 5px;
-  padding: 2px;
+  padding: 4px 8px;
+}
+
+div.post-tags-wrap .post-tags div:hover {
+  background-color: #fbc40d;
+  color: #000;
 }
 
 div.bottom-content {
@@ -80,6 +90,7 @@ div.post-item {
   flex: 1 1 auto;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 0;
 }
 
 div.post-item div.post-subtitle {
@@ -87,5 +98,21 @@ div.post-item div.post-subtitle {
 }
 
 div.post-item div.post-metadata {
-  padding: 10px 0;
+  margin-top: 5px;
+  padding-bottom: 10px;
+}
+
+div.post-item div.post-metadata span.post-date {
+  font-size: 12px;
+  color: grey;
+}
+
+div.post-metadata span.tag {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: #fbc40d;
+  color: #000;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 4px 8px;
 }

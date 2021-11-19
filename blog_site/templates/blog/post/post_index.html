@@ -45,11 +45,11 @@
         </h2>
         <div class="post-subtitle">
           <a href="{% url 'post_view' pk=post.id %}">
-            <h5>{{ post.subtitle }}</h5>
+            <h4><i>{{ post.subtitle }}</i></h4>
           </a>
         </div>
         <div class="post-metadata">
-          <span>July 21, 2021</span><span>tag</span>
+          <span class="post-date">{{ post.created_at }}</span> <span class="tag">Data Engineering</span>
         </div>
       </div>
       <a href="{% url 'post_view' pk=post.id %}">
