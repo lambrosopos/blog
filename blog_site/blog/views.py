@@ -17,10 +17,11 @@ class PostIndexListView(ListView):
         context['tag_list'] = Tag.objects.all()
         return context
 
+
 class PostItemDetailView(DetailView):
     model               = Post
     template_name       = 'blog/post/post_view.html'
-    context_object_name = 'post_item'
+    context_object_name = 'post'
 
 
 def post_create(request):
