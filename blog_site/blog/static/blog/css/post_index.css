@@ -90,11 +90,14 @@ div.post-item {
   flex: 1 1 auto;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 20px 0;
+}
+
+div.post-item div.post-title {
+  margin-bottom: 12px;
 }
 
 div.post-item div.post-subtitle {
-  margin-top: 5px;
   padding: 5px 0;
 }
 
