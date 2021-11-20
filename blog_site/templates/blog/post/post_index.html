@@ -40,11 +40,11 @@
     {% for post in post_list %}
     <div class="post-item">
       <div>
-      <div class="post-title">
-        <h2>
-          <a href="{% url 'post_view' pk=post.id %}">{{ post.title }}</a>
-        </h2>
-      </div>
+        <div class="post-title">
+          <h2>
+            <a href="{% url 'post_view' pk=post.id %}">{{ post.title }}</a>
+          </h2>
+        </div>
         <div class="post-subtitle">
           <a href="{% url 'post_view' pk=post.id %}">
             <h4><i>{{ post.subtitle }}</i></h4>
