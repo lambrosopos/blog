@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -84,7 +85,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': os.getenv('DB_USER', 'postgres'),
         'PASSWORD': os.getenv('DB_PASSWORD', 'postgres'),
-        'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+        'HOST': os.getenv('DB_HOST', 'postgres'),
         'PORT': os.getenv('DB_PORT', '5432')
     }
 }
