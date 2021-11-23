@@ -29,5 +29,3 @@ class Post(models.Model):
 
     def __repr__(self):
         return f"Post <{self.uuid}>"
-
-
