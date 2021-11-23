@@ -2,6 +2,18 @@ import uuid
 from django.db import models
 
 
+class Tag(models.Model):
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=128)
+
+    class Meta:
+        verbose_name = "Tag"
+        verbose_name_plural = "Tags"
+
+    def __repr__(self):
+        return f"Tag <{self.uuid}>"
+
+
 class Post(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=256)
@@ -9,6 +21,7 @@ class Post(models.Model):
     body = models.TextField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
+    tags = models.ForeignKey(Tag, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Post"
@@ -18,14 +31,3 @@ class Post(models.Model):
         return f"Post <{self.uuid}>"
 
 
-class Tag(models.Model):
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=128)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = "Tag"
-        verbose_name_plural = "Tags"
-
-    def __repr__(self):
-        return f"Tag <{self.uuid}>"
