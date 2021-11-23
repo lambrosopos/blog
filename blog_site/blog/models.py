@@ -13,6 +13,9 @@ class Tag(models.Model):
     def __repr__(self):
         return f"Tag <{self.uuid}>"
 
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
@@ -21,7 +24,10 @@ class Post(models.Model):
     body = models.TextField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(
+        Tag,
+        blank=True
+    )
 
     class Meta:
         verbose_name = "Post"
@@ -29,3 +35,6 @@ class Post(models.Model):
 
     def __repr__(self):
         return f"Post <{self.uuid}>"
+
+    def __str__(self):
+        return self.title
