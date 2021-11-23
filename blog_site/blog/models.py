@@ -21,7 +21,7 @@ class Post(models.Model):
     body = models.TextField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    tags = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag)
 
     class Meta:
         verbose_name = "Post"
