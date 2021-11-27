@@ -23,9 +23,9 @@ services:
       sh -c "sleep 10 &&
              python manage.py makemigrations &&
              python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+             gunicorn -b 0.0.0.0:8000 blog_site.wsgi:application"
     ports:
-      - "8000:8000"
+      - "80:8000"
     depends_on:
       - postgres
     volumes:
