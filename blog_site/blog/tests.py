@@ -10,16 +10,16 @@ class PostTestCase(TestCase):
         }
 
         Post.objects.create(
-            title=self.test_post_1.title,
-            subtitle=self.test_post_1.subtitle,
-            body=self.test_post_1.body
+            title=self.test_post_1['title'],
+            subtitle=self.test_post_1['subtitle'],
+            body=self.test_post_1['body']
         )
 
     def test_post_has_appropriate_properties(self):
         test_post = Post.objects.get(
-            title=self.test_post_1.title,
-            subtitle=self.test_post_1.subtitle,
-            body=self.test_post_1.body
+            title=self.test_post_1['title'],
+            subtitle=self.test_post_1['subtitle'],
+            body=self.test_post_1['body']
         )
         self.assertIsNotNone(test_post.uuid)
         self.assertIsNotNone(test_post.created_at)
