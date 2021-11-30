@@ -13,7 +13,6 @@ class PostIndexListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         context['tag_list'] = Tag.objects.all()
         return context
 
@@ -26,6 +25,7 @@ class PostItemDetailView(DetailView):
 
 def post_create(request):
     return render(request, 'blog/post/post_create.html')
+
 
 def post_edit(request, post_id):
     return render(request, 'blog/post/post_edit.html')
