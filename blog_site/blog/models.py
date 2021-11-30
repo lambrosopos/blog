@@ -18,16 +18,14 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=256)
-    subtitle = models.CharField(max_length=128)
-    body = models.TextField()
+    uuid       = models.UUIDField(default=uuid.uuid4, editable=False)
+    title      = models.CharField(max_length=256)
+    subtitle   = models.CharField(max_length=128)
+    body       = models.TextField()
+    views      = models.IntegerField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    tags = models.ManyToManyField(
-        Tag,
-        blank=True
-    )
+    tags       = models.ManyToManyField(Tag, blank=True)
 
     class Meta:
         verbose_name = "Post"
