@@ -12,3 +12,4 @@ COPY ./gunicorn_start ./gunicorn_start
 RUN chmod u+x ./gunicorn_start
 
 COPY ./blog_site .
+CMD ["python", "manage.py", "runserver"]
