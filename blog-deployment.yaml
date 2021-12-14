@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-app
+  labels:
+    app: blog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: blog
+    template:
+      metadata:
+        labels:
+          pod: blog
+      spec:
+        containers:
+          - name: blog-app
+            image: registry.hub.docker.com/lambrosopos/testing-blog:0.1
+            ports:
+              - containerPort: 8000
