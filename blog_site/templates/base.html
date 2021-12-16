@@ -25,7 +25,9 @@
           <div id="searchbar">
             <input type="text" class="searchTerm" placeholder="Search">
             <button type="submit" class="searchButton">
-              <img src="{% static 'blog/img/icons/search-icon.png' %}"></i>
+              <a href="{% url 'search' %}">
+                <img src="{% static 'blog/img/icons/search-icon.png' %}">
+              </a>
             </button>
           </div>
           <div id="menu">
