@@ -22,7 +22,7 @@ class Post(models.Model):
     title      = models.CharField(max_length=256)
     subtitle   = models.CharField(max_length=128)
     body       = models.TextField()
-    views      = models.IntegerField()
+    views      = models.IntegerField(default=0)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     tags       = models.ManyToManyField(Tag, blank=True)
