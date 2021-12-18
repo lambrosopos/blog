@@ -23,13 +23,5 @@ class PostItemDetailView(DetailView):
     context_object_name = 'post'
 
 
-def post_create(request):
-    return render(request, 'blog/post/post_create.html')
-
-
-def post_edit(request, post_id):
-    return render(request, 'blog/post/post_edit.html')
-
-
 def search_results(request):
     return render(request, 'blog/search_results.html')
