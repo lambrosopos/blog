@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: blog-app
-          image: registry.hub.docker.com/lambrosopos/testing-blog:0.1
+          image: registry.hub.docker.com/lambrosopos/testing-blog:latest
           ports:
             - containerPort: 8000
