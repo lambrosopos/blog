@@ -5,7 +5,6 @@ from blog.models import Post, Tag
 
 class PostTestCase(TestCase):
     def setUp(self):
-        # Set up Post Data Class
         @dataclass
         class PostDataClass:
             title   : str

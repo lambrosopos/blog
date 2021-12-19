@@ -1,5 +1,8 @@
+from dataclasses import dataclass
+
 from django.urls import resolve
 from django.test import TestCase, RequestFactory
+from blog.models import Post
 from blog.views import (index,
                         PostIndexListView,
                         PostItemDetailView,
@@ -31,11 +34,23 @@ class PostIndexPageTest(TestCase):
         self.assertIn('Introduction', html)
         self.assertIn('Welcome to posts index page', html)
 
+
 class PostItemPageTest(TestCase):
+    def setUp(self):
+        self.url_path = '/posts/1'
+        self.factory = RequestFactory()
+
     def test_post_detail_url_resolves_to_post_detail_page(self):
-        found = resolve('/posts/1')
+        found = resolve(self.url_path)
         self.assertEqual(found.func.__name__, 
                          PostItemDetailView.as_view().__name__)
+
+    # def test_post_detail_page_shows_correct_post_item(self):
+        # response = self.client.get(path=self.url_path)
+
+        # html = response.content.decode('utf8')
+        # self.assertTrue(html.startwith('\n<!DOCTYPE html>'))
+
 
 
 class SearchPageTest(TestCase):
