@@ -24,9 +24,7 @@ jobs:
           buildx-version: latest
       - name: Login to Docker
         run: docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD
-      - name: Build New Image
-        run: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_HUB_USERNAME/$REPOSITORY_NAME:$IMAGE_TAG .
-      - name: Push New Image
-        run: docker push $DOCKER_HUB_USERNAME/$REPOSITORY_NAME:$IMAGE_TAG
+      - name: Build and push new Image
+        run: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_HUB_USERNAME/$REPOSITORY_NAME:$IMAGE_TAG --push .
       - name: Build and Push Latest Image
         run: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_HUB_USERNAME/$REPOSITORY_NAME:latest --push .
