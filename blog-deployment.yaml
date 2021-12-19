@@ -9,13 +9,13 @@ spec:
   selector:
     matchLabels:
       pod: blog
-    template:
-      metadata:
-        labels:
-          pod: blog
-      spec:
-        containers:
-          - name: blog-app
-            image: registry.hub.docker.com/lambrosopos/testing-blog:0.1
-            ports:
-              - containerPort: 8000
+  template:
+    metadata:
+      labels:
+        pod: blog
+    spec:
+      containers:
+        - name: blog-app
+          image: registry.hub.docker.com/lambrosopos/testing-blog:0.1
+          ports:
+            - containerPort: 8000
