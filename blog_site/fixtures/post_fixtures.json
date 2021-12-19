@@ -1,0 +1,11 @@
+[
+    {
+        "model": "blog.post",
+        "pk": 1,
+        "fields": {
+            "title"    : "Test Post Title",
+            "subtitle" : "Test Post Subtitle",
+            "body"     : "#Header 1"
+        }
+    }
+]
