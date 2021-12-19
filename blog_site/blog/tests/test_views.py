@@ -12,12 +12,14 @@ class IndexPageTest(TestCase):
         self.assertEqual(found.func, index)
 
 
-class PostPageTest(TestCase):
+class PostIndexPageTest(TestCase):
     def test_root_post_url_resolves_to_post_index_page(self):
         found = resolve('/posts')
         self.assertEqual(found.func.__name__,
                          PostIndexListView.as_view().__name__)
 
+
+class PostItemPageTest(TestCase):
     def test_post_detail_url_resolves_to_post_detail_page(self):
         found = resolve('/posts/1')
         self.assertEqual(found.func.__name__, 
