@@ -1,6 +1,9 @@
 from django.urls import resolve
 from django.test import TestCase
-from blog.views import index, PostIndexListView, PostItemDetailView
+from blog.views import (index,
+                        PostIndexListView,
+                        PostItemDetailView,
+                        search_results)
 
 
 class IndexPageTest(TestCase):
@@ -21,3 +24,7 @@ class PostPageTest(TestCase):
                          PostItemDetailView.as_view().__name__)
 
 
+class SearchPageTest(TestCase):
+    def test_search_url_resolves_to_search_page(self):
+        found = resolve('/search')
+        self.assertEqual(found.func, search_results)
