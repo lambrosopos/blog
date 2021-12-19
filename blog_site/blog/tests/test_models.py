@@ -60,3 +60,4 @@ class TagTestCase(TestCase):
 
         self.assertEqual(test_tag.name, self.test_tag_1.name)
         self.assertIsNotNone(test_tag.uuid)
+
