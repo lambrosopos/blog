@@ -4,6 +4,8 @@ from django.test import TestCase
 from blog.models import Post, Tag
 
 class PostTestCase(TestCase):
+    fixtures = ["post_fixtures.json"]
+
     def setUp(self):
         @dataclass
         class PostDataClass:
@@ -15,12 +17,6 @@ class PostTestCase(TestCase):
             title    = "Test Post Title",
             subtitle = "Test Post Subtitle",
             body     = "#Header 1"
-        )
-
-        Post.objects.create(
-            title    = self.test_post_1.title,
-            subtitle = self.test_post_1.subtitle,
-            body     = self.test_post_1.body,
         )
 
     def test_post_has_appropriate_properties(self):
