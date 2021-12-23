@@ -36,6 +36,8 @@ class PostIndexPageTest(TestCase):
 
 
 class PostItemPageTest(TestCase):
+    fixtures = ["post_fixtures.json"]
+
     def setUp(self):
         self.url_path = '/posts/1'
         self.factory = RequestFactory()
@@ -45,11 +47,12 @@ class PostItemPageTest(TestCase):
         self.assertEqual(found.func.__name__, 
                          PostItemDetailView.as_view().__name__)
 
-    # def test_post_detail_page_shows_correct_post_item(self):
-        # response = self.client.get(path=self.url_path)
+    def test_post_detail_page_shows_correct_post_item(self):
+        request = self.factory.get(self.url_path)
+        response = PostItemDetailView.as_view()(request, pk=1)
 
-        # html = response.content.decode('utf8')
-        # self.assertTrue(html.startwith('\n<!DOCTYPE html>'))
+        html = response.render().content.decode('utf8')
+        self.assertTrue(html.startswith('\n<!DOCTYPE html>'))
 
 
 
