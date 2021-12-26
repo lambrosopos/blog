@@ -1,4 +1,4 @@
-name: AUTO DEPLOY BLOG APP
+name: PUSH BLOG IMAGE TO DOCKER HUB
 
 env:
   IMAGE_TAG: ${{ github.sha }}
