@@ -4,7 +4,7 @@ env:
   IMAGE_TAG: ${{ github.sha }}
   DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
   DOCKER_HUB_USERNAME: lambrosopos
-  REPOSITORY_NAME: testing-blog
+  REPOSITORY_NAME: blog
 
 on:
   push:
