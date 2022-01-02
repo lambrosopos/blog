@@ -19,8 +19,8 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Read env variables
-env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, 'blog_site', '.env'))
+env = environ.Env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -32,7 +32,6 @@ SECRET_KEY = 'django-insecure-=o@21n9jl8ik)zm3bssh7j$&1c4cy#vve934y!9=5joe0q5d4n
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -78,22 +77,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'blog_site.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-        'TEST': {
-            'NAME': 'test_db'
-        },
-    }
-}
 
 
 # Password validation
