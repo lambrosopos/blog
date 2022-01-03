@@ -25,13 +25,8 @@ env = environ.Env()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=o@21n9jl8ik)zm3bssh7j$&1c4cy#vve934y!9=5joe0q5d4n'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -75,8 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blog_site.wsgi.application'
-
-
 
 
 # Password validation

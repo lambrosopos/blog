@@ -1,7 +1,7 @@
 from .base import env
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=o@21n9jl8ik)zm3bssh7j$&1c4cy#vve934y!9=5joe0q5d4n'
+# DJANGO PRODUCTION SECRET KEY
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
