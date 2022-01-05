@@ -1,4 +1,4 @@
-name: PUSH BLOG IMAGE TO DOCKER HUB
+name: Push Blog Image to Dockerhub
 
 env:
   IMAGE_TAG: ${{ github.sha }}
