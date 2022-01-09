@@ -9,4 +9,4 @@ COPY ./requirements.txt requirements.txt
 RUN python -m pip install -r requirements.txt
 
 COPY ./blog_site .
-CMD ["python", "manage.py", "runserver"]
+CMD ["gunicorn", "blog_site.wsgi"]
