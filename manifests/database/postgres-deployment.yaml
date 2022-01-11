@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         pod: blog-db
+        app: blog-db
     spec:
       containers:
         - name: blog-db
@@ -19,6 +20,8 @@ spec:
           ports:
             - containerPort: 5432
           envFrom:
+            - secretRef:
+              name: blog-db-secrets
             - configMapRef:
                 name: blog-db-config
           volumeMounts:

@@ -1,0 +1,31 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: blog-db-backup
+  labels:
+    app: blog-db
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: postgres-backup
+              image: google/cloud-sdk:alpine
+              args:
+                - apk --update add postgresql
+                - pg_dump -u myblog > myblog-$(date +$s).bak
+                - gsutil cp myblog.bak gs://myblog/backups
+              envFrom:
+                - secretRef:
+                  name: postgres-secrets
+                - configMapRef:
+                  name: postgres-configmap
+              volumeMounts:
+                - name: postgredb
+                  mountPath: /var/lib/postgresql/data
+            volumes:
+              - name: postgredb
+                  persistentVolumeClaim:
+                    claimName: blog-db-pv-claim
