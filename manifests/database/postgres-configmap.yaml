@@ -6,4 +6,3 @@ metadata:
     app: blog-db
 data:
   POSTGRES_DB: postgres
-  POSTGRES_USER: postgres
