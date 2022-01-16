@@ -19,3 +19,9 @@ spec:
           image: registry.hub.docker.com/lambrosopos/blog:latest
           ports:
             - containerPort: 8000
+          env:
+            - name: DJANGO_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: blog-envs
+                  key: DJANGO_SECRET_KEY
