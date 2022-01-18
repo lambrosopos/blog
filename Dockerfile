@@ -9,4 +9,4 @@ COPY ./requirements.txt requirements.txt
 RUN python -m pip install -r requirements.txt
 
 COPY ./blog_site .
-CMD ["gunicorn", "blog_site.wsgi"]
+CMD ["gunicorn", "--bind", ":8000", "blog_site.wsgi"]
