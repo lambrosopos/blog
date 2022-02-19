@@ -1,0 +1,154 @@
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.25;
+  background:#fff;
+  color: #151719;
+  -webkit-text-size-adjust: 100%;
+}
+
+div {
+  display: block;
+}
+
+#container {
+  position:relative;
+}
+
+#container .content-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding 0 20px;
+}
+
+#sidebar {
+  float: left;
+  width: 22%;
+  padding 75px 0 32px;
+  box-sizing: border-box;
+}
+
+#content {
+  float: right;
+  width: 68%;
+  padding: 72px 0 60px;
+  box-sizing: border-box;
+  display: block;
+  height: 100vh;
+}
+
+#profile {
+  margin: 10px auto 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#profile img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid #151719;
+}  
+
+#title {
+  text-align: left;
+  display:flex;
+  flex-direction:column;
+  font-size: 20px;
+  line-height: 1.5em;
+  margin: 30px 30px;
+  margin-left: 30px;
+  font-size: 46px;
+  letter-spacing: -0.011em;
+  line-height: 56px;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(41, 41, 41, 1);
+}
+
+#title span {
+  display: block;
+}
+
+#searchbar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.searchTerm {
+  width: 70%;
+  height: 70%;
+  border: 1px solid #333;
+  border-right:none;
+  padding:10px;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  color: #E8DFD0;
+  background:#fff;
+  font-size: 16px;
+}
+
+.searchTerm:focus{
+  color:#E8DFD0;
+}
+
+.searchButton {
+  width:35px;
+  height: 70%;
+  border: 1px solid #151719;
+  border-left: none;
+  background:#333333;
+  text-align:center;
+  color: #333333;
+  border-radius:0 10px 10px 0;
+  cursor: pointer;
+  font-size:20px;
+  padding:5px;
+}
+
+.searchButton img {
+  width: 100%;
+  height: auto;
+}
+
+.searchButton:hover {
+  background: #3969EF;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar div#menu div.item {
+  padding:10px 10px;
+  margin-left: 30px;
+  text-transform:uppercase;
+  font-size:16px;
+  font-weight:bold;
+}
+
+#sidebar div#menu div.item a {
+  color: #151719;
+  text-decoration: none;
+}
+
+#sidebar div#menu div.item a:hover {
+  color: #fbc40d;
+}

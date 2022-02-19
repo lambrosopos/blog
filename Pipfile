@@ -12,6 +12,7 @@ Django = "==3.2.9"
 Markdown = "==3.3.4"
 django-environ = "*"
 psycopg2 = "2.9.1"
+whitenoise = "*"
 
 [dev-packages]
 
