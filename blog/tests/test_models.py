@@ -1,22 +1,14 @@
-from dataclasses import dataclass
 from datetime import date
 
 from django.test import TestCase
 from blog.models import Post, Tag
+from .tests import predefined_dataclasses as pred_dc
 
 class PostTestCase(TestCase):
     fixtures = ["post_fixtures.json"]
 
     def setUp(self):
-        @dataclass
-        class PostDataClass:
-            title      : str
-            subtitle   : str
-            body       : str
-            created_at : date
-            updated_at : date
-
-        self.test_post_1 = PostDataClass(
+        self.test_post_1 = pred_dc.PostDataClass(
             title      = "Test Post Title",
             subtitle   = "Test Post Subtitle",
             body       = "#Header 1",
@@ -24,7 +16,7 @@ class PostTestCase(TestCase):
             updated_at = date(2021, 1, 1)
         )
 
-        self.test_post_2 = PostDataClass(
+        self.test_post_2 = pred_dc.PostDataClass(
             title      = "Test Post Title 2",
             subtitle   = "Test Post Subtitle 2",
             body       = "#Header 1",
@@ -67,11 +59,7 @@ class PostTestCase(TestCase):
 
 class TagTestCase(TestCase):
     def setUp(self):
-        @dataclass
-        class TagDataClass:
-            name: str
-
-        self.test_tag_1 = TagDataClass(
+        self.test_tag_1 = pred_dc.TagDataClass(
             name='test_tag'
         )
 
