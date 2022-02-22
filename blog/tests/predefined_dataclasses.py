@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import date
 
 @dataclass
 class PostDataClass:
@@ -7,3 +8,7 @@ class PostDataClass:
     body       : str
     created_at : date
     updated_at : date
+
+@dataclass
+class TagDataClass:
+    name       : str
