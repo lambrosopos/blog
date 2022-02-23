@@ -1,5 +1,3 @@
-from datetime import date
-
 from django.test import TestCase
 from blog.models import Post, Tag
 from .tests import predefined_dataclasses as pred_dc
