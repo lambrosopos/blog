@@ -1,6 +1,6 @@
 from django.test import TestCase
 from blog.models import Post, Tag
-from .tests import predefined_dataclasses as pred_dc
+from . import predefined_dataclasses as pred_dc
 
 class PostTestCase(TestCase):
     fixtures = ["post_fixtures.json"]

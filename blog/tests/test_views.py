@@ -1,12 +1,14 @@
-from dataclasses import dataclass
+from datetime import date
 
 from django.urls import resolve
 from django.test import TestCase, RequestFactory
+
 from blog.models import Post
 from blog.views import (index,
                         PostIndexListView,
                         PostItemDetailView,
                         search_results)
+from . import predefined_dataclasses as pred_dc
 
 
 class IndexPageTest(TestCase):
@@ -60,3 +62,23 @@ class SearchPageTest(TestCase):
     def test_search_url_resolves_to_search_page(self):
         found = resolve('/search')
         self.assertEqual(found.func, search_results)
+
+
+class SearchFunctionTest(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+        self.test_post_1 = pred_dc.PostDataClass(
+            title      = "Dolphin's Rainbow",
+            subtitle   = "Gladly Rejoin Cafe",
+            body       = "#2 Dolphins Reunite",
+            created_at = date(2021, 1, 1),
+            updated_at = date(2021, 1, 1)
+        )
+
+    def test_search_returns_correct_results(self):
+        request = self.factory.get('/search?q=Dolphin')
+        response = search_results(request)
+
+        html = response.render().html.decode('utf8')
+        self.assertTrue(html.startswith('\n<!DOCTYPE html>'))
