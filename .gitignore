@@ -3,3 +3,4 @@
 __pycache__/
 blog_site/blog/migrations/*
 .idea/
+.vim/
