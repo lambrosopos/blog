@@ -3,7 +3,6 @@ from datetime import date
 from django.urls import resolve
 from django.test import TestCase, RequestFactory
 
-from blog.models import Post
 from blog.views import (index,
                         PostIndexListView,
                         PostItemDetailView,
