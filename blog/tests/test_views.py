@@ -76,8 +76,9 @@ class SearchFunctionTest(TestCase):
         )
 
     def test_search_returns_correct_results(self):
-        request = self.factory.get('/search?q=Dolphin')
+        request = self.factory.get("/search?q=Dolphin")
         response = search_results(request)
 
-        html = response.render().html.decode('utf8')
+        html = response.content.decode('utf8')
         self.assertTrue(html.startswith('\n<!DOCTYPE html>'))
+        self.assertInHTML(html, "Dolphin's Rainbow")
