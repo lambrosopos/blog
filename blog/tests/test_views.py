@@ -64,6 +64,8 @@ class SearchPageTest(TestCase):
 
 
 class SearchFunctionTest(TestCase):
+    fixtures = ["post_fixtures.json"]
+
     def setUp(self):
         self.factory = RequestFactory()
 
@@ -74,6 +76,7 @@ class SearchFunctionTest(TestCase):
             created_at = date(2021, 1, 1),
             updated_at = date(2021, 1, 1)
         )
+
 
     def test_search_returns_correct_results(self):
         request = self.factory.get("/search?q=Dolphin")
