@@ -84,4 +84,4 @@ class SearchFunctionTest(TestCase):
 
         html = response.content.decode('utf8')
         self.assertTrue(html.startswith('\n<!DOCTYPE html>'))
-        self.assertInHTML(html, "Dolphin's Rainbow")
+        self.assertInHTML("Dolphin's Rainbow", html)
